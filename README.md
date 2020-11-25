@@ -1,3 +1,3 @@
 # portfolio website
 
-My Personal self made portfolio website.
+My Personal portfolio website.
