@@ -6,15 +6,23 @@
         <title>Ayush</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
-        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-        
         <style>
             .body{
                 width:100%;
                 display:inline-flex;
             }
+            
+	       .btn-success{
+               background-image: linear-gradient(45deg, #02330d, #28a745);
+		    }
+            
+		  .btn-danger{
+            background-image: linear-gradient(45deg, black, #89111100);
+		  }
+
+        
         </style>    
     </head>
     <body>
@@ -103,57 +111,89 @@
                       </table>
                   </div>
               </div>
-              <br><br>
+              <br>
+              <br>
               <hr>
               <section id="projects">
-              <div class="jumbotron jumbotron-fluid d-flex justify-content-md-center row">
-              <div class="container col-lg-12 col-sm-12 mb-5 mt-0 text-center"><h3 class="display-4 font-weight-bolder" style="font-size: 3em; ">Projects</h3></div>      
-              <div class="container col-lg-6 col-sm-12 p-3">
-                <div class="card">
-                  <div class="card-header">  
-                    <img src="images/project2.png" class="img-fluid img-resposive" alt="project1">
-                  </div>
-                  <div class="text-center bg-light">
-                    <h3 class="card-title font-weight-bold lead">FarmAlly</h3>
-                    <p class="card-text">A Comprehensive Tool for Data-Driven Farming. This responsive web portal for farmers that contain various tools to encourage data driven farming. Contains Log In and Sign In functionalities, applied trained machine learning models to help farmers analyse and predict crop diseases, their market price, and much more.</p>
-                    <hr>  
-                    <div class="card-body">
-                        <a href="https://github.com/Ayushmanas/FarmAlly" target="_blank" class="btn-lg btn-success card-link">Go to link</a>
-                    </div>
-                  </div>
-               </div>
-              </div>
-              <div class="container col-lg-6 col-sm-12 p-3">
-                <div class="card">
-                  <div class="card-header">  
-                    <img src="images/project1.png" class="img-fluid img-resposive" alt="project1">
-                  </div>
-                  <div class="text-center bg-light">
-                    <h3 class="card-title font-weight-bold lead">Biscope</h3>
-                    <p class="card-text">A web portal for Movies and Weather information using RESTful web services (TMDB, OpenWeather). Users can search for current weather information, and Movie information about latest movies, theer actors, etc.</p>
-                    <hr>  
-                    <div class="card-body">
-                        <a href="https://github.com/Ayushmanas/Biscope" target="_blank" class="btn-lg btn-success card-link">Go to link</a>
-                    </div>
-                  </div>
-               </div>
-              </div>
-              <div class="container col-lg-6 col-sm-12 p-3">
-                <div class="card">
-                  <div class="card-header">  
-                    <img src="images/project4.png" class="img-fluid img-resposive" alt="project4">
-                  </div>
-                  <div class="text-center bg-light">
-                    <h3 class="card-title font-weight-bold lead">Student Database Management System</h3>
-                    <p class="card-text">A web portal using dbms for studemts to choose and register for their preference of extracurricular subjects. Made to be used by all students, faculty staff, and an administrator who can add and remove students and subjects.</p>
-                    <hr>  
-                    <div class="card-body">
-                        <a href="https://github.com/Ayushmanas/student-extracurricular-activities-management-system" class="btn-lg btn-success card-link" target="_blank">Go to link</a>
-                    </div>
-                  </div>
-               </div>
-              </div>
+              <div class="jumbotron jumbotron-fluid d-flex bg-white row">
+              
+                  <div class="container col-lg-12 col-sm-12 mb-5 mt-0 text-center"><h3 class="display-4 font-weight-bolder" style="font-size: 3em; ">Projects</h3></div>  
                   
+                  <div class="container col-lg-4 col-sm-6">
+                    <center>
+                      <div class="card w-auto bg-white shadow-lg round text-center m-3 p-3">
+                  
+                          <div class="card-header bg-white rounded p-3">  
+                    
+                              <img src="images/project2.png" class="img-fluid img-resposive" alt="project1">
+                 
+                          </div>  
+                          <div class="card-body text-center bg-white rounded p-3">
+                    
+                              <h3 class="card-title font-weight-bold lead">FarmAlly</h3>
+                    
+                              <p class="card-text">A Comprehensive Tool for Data-Driven Farming. This responsive web portal for farmers that contain various tools to encourage data driven farming. Contains Log In and Sign In functionalities, applied trained machine learning models to help farmers analyse and predict crop diseases, their market price, and much more.</p>
+   
+                              <hr>
+                              
+                              <a href="https://github.com/Ayushmanas/FarmAlly" target="_blank" style="border-radius: 20px;" class="btn-lg btn-success shadow-lg rounded-pill lead card-link ">Go to link</a>
+                    
+                          </div>
+               
+                      </div>
+                      </center>
+                  </div>
+                  
+                  <div class="container col-lg-4 col-sm-6">
+                    <center>
+                      <div class="card w-auto bg-white shadow-lg round text-center m-3 p-3">
+                  
+                          <div class="card-header bg-white rounded p-3">  
+                    
+                              <img src="images/project1.png" class="img-fluid img-resposive" alt="project2">
+                 
+                          </div>  
+                          <div class="card-body text-center bg-white rounded p-3">
+                    
+                              <h3 class="card-title font-weight-bold lead">Biscope</h3>
+                    
+                              <p class="card-text">A web portal for Movies and Weather information using RESTful web services (TMDB, OpenWeather). Users can search for current weather information, and Movie information about latest movies, theer actors, etc.</p>
+   
+                              <hr>
+                              
+                              <a href="https://github.com/Ayushmanas/Biscope" target="_blank" style="border-radius: 20px;" class="btn-lg btn-success shadow-lg rounded-pill lead card-link ">Go to link</a>
+                    
+                          </div>
+               
+                      </div>
+                      </center>
+                  </div>
+                
+                  <div class="container col-lg-4 col-sm-6">
+                    <center>
+                      <div class="card w-auto bg-white shadow-lg round text-center m-3 p-3">
+                  
+                          <div class="card-header bg-white rounded p-3">  
+                    
+                              <img src="images/project4.png" class="img-fluid img-resposive" alt="project4">
+                 
+                          </div>  
+                          <div class="card-body text-center bg-white rounded p-3">
+                    
+                              <h3 class="card-title font-weight-bold lead">Student Database Management System</h3>
+                    
+                              <p class="card-text">A web portal using dbms for studemts to choose and register for their preference of extracurricular subjects. Made to be used by all students, faculty staff, and an administrator who can add and remove students and subjects.</p>
+   
+                              <hr>
+                              
+                              <a href="https://github.com/Ayushmanas/student-extracurricular-activities-management-system" target="_blank" style="border-radius: 20px;" class="btn-lg btn-success shadow-lg rounded-pill lead card-link ">Go to link</a>
+                    
+                          </div>
+               
+                      </div>
+                      </center>
+                  </div>
+                    
                   </div> 
                   <hr>
                   
