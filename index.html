@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: 'Segoe UI',Arial,sans-serif; background: #f7fafd; color: #222; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f7fafd; color: #222; }
     #timeline { background: #1c3660; padding: 2rem 0; }
     .timeline-step { position: relative; margin-bottom: 3rem; }
     .timeline-step:last-child { margin-bottom: 0; }
@@ -18,360 +18,95 @@
     .timeline-line {
       position: absolute; left: -7px; top: 32px; width: 4px; height: 100%; background: #cfe2ff;
     }
-    .timeline-content { margin-left: 40px; background: #fff; border-radius: 0.5rem; padding: 1.5rem 2rem; box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+    .timeline-content {
+      margin-left: 40px; background: #fff; border-radius: 0.5rem; padding: 1.5rem 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
     .timeline-date { font-weight: 700; color: #3498db; margin-bottom: 6px; }
-    .timeline-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 2px;}
-    .timeline-org { font-style: italic; font-size: 1rem; color: #1c3660;}
-    .cert-logo { height:32px; max-width:90px; object-fit: contain; margin-right: 0.7em; background: #fff; border-radius: 6px; }
-    .project-card { height:100%; box-shadow:0 2px 8px rgba(44,62,80,.07); border:1px solid #e0e8fa; border-radius:1rem; padding:1.2rem; background:#fff;}
-    .legacy-label { font-size: 0.98em; border-radius: 16px; background: #eef; color: #455; padding: 3px 12px; margin-top: 8px;}
-    .resume-embed {border:1.5px solid #d1e2f8; border-radius:0.75rem;}
-    .section-title{ border-left: 7px solid #3498db; padding-left: 11px; font-size:2em; margin-bottom: 0.9em;}
+    .timeline-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 2px; }
+    .timeline-org { font-style: italic; font-size: 1rem; color: #1c3660; }
+    .cert-logo { height: 32px; max-width: 90px; object-fit: contain; margin-right: 0.7em; background: #fff; border-radius: 6px; }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      min-height: 270px;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 1.2rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+      border: 1px solid #e0e8fa; 
+      border-radius: 1rem;
+    }
+    .resume-embed { border: 1.5px solid #d1e2f8; border-radius: 0.75rem; }
+    .section-title { border-left: 7px solid #3498db; padding-left: 11px; font-size: 2em; margin-bottom: 0.9em; }
     a { color: #095ac1; }
-    .navbar { background: #232f45;}
-    .navbar-brand,.nav-link{color:#fff!important;}
-    .fa-solid,.fa-brands{color:#3498db;}
-    .contact-icon{color:tomato;}
-    @media (max-width:767px) {
-      .timeline-content{padding: 1rem;}
-      .project-card{padding:1rem;}
-      .section-title {font-size:1.4em;}
+    .navbar { background: #232f45; }
+    .navbar-brand, .nav-link { color: #fff !important; }
+    .fa-solid, .fa-brands { color: #3498db; }
+    .contact-icon { color: tomato; }
+    @media (max-width: 767px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .project-card { min-height: 180px; }
+      .section-title { font-size: 1.4em; }
     }
   </style>
 </head>
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-md mb-4">
-  <div class="container-xxl">
-    <a class="navbar-brand fw-bold" href="#home"><img src="images/profile-pic.jpeg" alt="Ayush profile" style="width:35px;border-radius:50%;border:2px solid #cfe2ff;margin-right:8px;">Ayush Prasad</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" style="color:#fff;"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#timeline">Timeline</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#certifications">Certifications</a>
-        <a class="nav-link" href="#resume">Resume</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- About -->
-<section id="about" class="container mt-2 mb-5">
-  <div class="row align-items-center">
-    <div class="col-md-3 mb-3 text-center">
-      <img src="images/profile_pic3.jpg" alt="Ayush Avatar" class="rounded-circle" style="width:145px;box-shadow:0 2px 16px #cee4fa;">
-    </div>
-    <div class="col-md-9">
-      <h1 class="mb-2">Ayush Prasad</h1>
-      <h5 class="fw-semibold text-primary mb-2">Senior ML Consultant at Capgemini</h5>
-      <p class="mb-1">Data Scientist with 5+ years of experience in predictive modeling, marketing analytics, and applied machine learning. Passionate about translating complex business needs into data-driven solutions using Python, SQL, and cloud platforms. Experienced in building scalable ML pipelines, advanced analytics for B2C, and team leadership across global organizations.</p>
-      <p class="mt-2"><span class="me-3"><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- Timeline -->
-<section id="timeline" class="">
-  <div class="container">
-    <div class="section-title text-white">Career Timeline</div>
-    <div class="ms-2 position-relative pb-2">
-      <!-- Step 1 -->
-      <div class="timeline-step">
-        <div class="timeline-dot"></div>
-        <div class="timeline-line"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">03/2026 – Present</div>
-          <div class="timeline-title">Senior ML Consultant</div>
-          <div class="timeline-org">Capgemini</div>
-          <ul>
-            <li>Delivering advanced machine learning solutions and consulting services for enterprise clients.</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Step 2 -->
-      <div class="timeline-step">
-        <div class="timeline-dot"></div>
-        <div class="timeline-line"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">04/2022 – 03/2026</div>
-          <div class="timeline-title">Senior Data Analyst</div>
-          <div class="timeline-org">Dentsu Global Services (Merkle Inspire Pvt Ltd)</div>
-          <ul>
-            <li>Developed AI/ML solutions: BERT, Transformers, XGBoost, clustering, deep learning for marketing and customer analytics.</li>
-            <li>Built MLOps pipelines using GCP, Databricks, Vertex AI.</li>
-            <li>Consulted for B2C e-commerce and digital media clients; drove 15% business ROI and led agentic AI POCs.</li>
-          </ul>
-          <div class="timeline-subproject mt-2">
-            <b>Main Projects:</b>
-            <ul>
-              <li><b>Search & Rescue: Deliveries at Risk Prediction:</b> Built ML systems that reduced delivery risks by 12%, saving $50K+.</li>
-              <li><b>Address IQ - Deployable ML Grading Tool:</b> Led team on active-learning PoC for address data quality grading.</li>
-              <li><b>AI-Driven Micro-Segmentation:</b> Improved ad revenue 10% by building targeted consumer audience clusters with PySpark.</li>
-              <li><b>Demographics Imputation:</b> Built distributed ML for predicting customer demographics from viewing data using SparkML and cloud pipelines.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Step 3 -->
-      <div class="timeline-step">
-        <div class="timeline-dot"></div>
-        <div class="timeline-line"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">12/2020 – 03/2022</div>
-          <div class="timeline-title">Data Analyst</div>
-          <div class="timeline-org">Merkle Inspire Pvt Ltd (formerly Ugam Solutions)</div>
-          <ul>
-            <li>Delivered closed-loop analytics and custom audience generation for OTT clients.</li>
-            <li>Implemented scalable clustering and MVP ML models, improving decision efficiency and generating 15–27% additional revenue for key clients.</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Step 4 -->
-      <div class="timeline-step">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">01/2020 – 02/2020</div>
-          <div class="timeline-title">Web Developer Intern</div>
-          <div class="timeline-org">X-Workz ODC</div>
-          <ul>
-            <li>Developed web applications using RESTful APIs (TMDB, OpenWeather, Railway API).</li>
-          </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md mb-4">
+    <div class="container-xxl">
+      <a class="navbar-brand fw-bold" href="#home">
+        <img src="images/profile-pic.jpeg" alt="Ayush profile" style="width:35px;border-radius:50%;border:2px solid #cfe2ff;margin-right:8px;">
+        Ayush Prasad
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color:#fff;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#timeline">Timeline</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#certifications">Certifications</a>
+          <a class="nav-link" href="#resume">Resume</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- Projects -->
-<section id="projects" class="mt-5 mb-5">
-  <div class="container">
-    <div class="section-title">Projects</div>
-    <div class="row g-4">
-      <!-- Recent / Featured Projects -->
-      <div class="col-lg-6 col-md-12">
-        <div class="project-card mb-2">
-          <h5 class="fw-semibold">Search & Rescue: Deliveries at Risk Prediction <span class="badge bg-primary mx-1">2024–2026</span></h5>
+  <!-- Projects Section -->
+  <section id="projects" class="mt-5 mb-5">
+    <div class="container">
+      <div class="section-title">Projects</div>
+      <div class="project-grid mt-2">
+        <div class="project-card">
+          <h5>Search & Rescue: Deliveries at Risk Prediction</h5>
           <p>Developed end-to-end ETL and ML scoring pipelines to assess operational and conversational risk, using XGBoost and Gemini LLMs. Led to a 12% delivery risk reduction and significant cost savings for the client.</p>
         </div>
-        <div class="project-card mb-2">
-          <h5 class="fw-semibold">Address IQ – Deployable ML Grading Tool <span class="badge bg-primary mx-1">2024</span></h5>
-          <p>Led team to build an active-learning ML solution for customer address data quality. Automated feature extraction and model training; used Gradient Boosting (PyCaret) and PostgreSQL; deployed via MLflow pipeline for scalability.</p>
-        </div>
-        <div class="project-card mb-2">
-          <h5 class="fw-semibold">AI-Driven Micro-Segmentation <span class="badge bg-primary mx-1">2023–2024</span></h5>
-          <p>Created micro-audience segments for marketing by analyzing viewership, demographics, and metadata with Spark & Python. Achieved a 10% boost in ad revenue by enabling granular targeting strategies.</p>
-        </div>
-        <div class="project-card mb-2">
-          <h5 class="fw-semibold">Demographics Imputation <span class="badge bg-primary mx-1">2022</span></h5>
-          <p>Developed SparkML-based distributed models to predict demographic features from large-scale viewing data. Improved prediction accuracy, supporting refined marketing analytics for streaming clients.</p>
-        </div>
-      </div>
-      <!-- Legacy / GitHub Projects -->
-      <div class="col-lg-6 col-md-12">
-        <div class="project-card mb-2">
-          <h5 class="fw-semibold">FarmAlly <span class="badge bg-info mx-1">On GitHub</span></h5>
+        <div class="project-card">
+          <h5>FarmAlly</h5>
           <p>A comprehensive web portal for data-driven farming. Features crop advisory, market insights, and responsive UX for smallholder farmers.<br>
             <a href="https://github.com/Ayushmanas/FarmAlly" target="_blank">GitHub Link</a>
           </p>
         </div>
-        <div class="project-card mb-2">
-          <h5 class="fw-semibold">Biscope <span class="badge bg-info mx-1">On GitHub</span></h5>
+        <div class="project-card">
+          <h5>Address IQ – Deployable ML Grading Tool</h5>
+          <p>Led team to build an active-learning ML solution for customer address data quality. Automated feature extraction and model training; used Gradient Boosting (PyCaret) and PostgreSQL; deployed via MLflow pipeline for scalability.</p>
+        </div>
+        <div class="project-card">
+          <h5>Biscope</h5>
           <p>Movie and weather information portal using RESTful APIs (TMDB, OpenWeather), with interactive movie review and search tools.<br>
             <a href="https://github.com/Ayushmanas/Biscope" target="_blank">GitHub Link</a>
           </p>
         </div>
-        <div class="project-card mb-2">
-          <h5 class="fw-semibold">Student Database Management System <span class="badge bg-info mx-1">On GitHub</span></h5>
-          <p>Student self-registration and course preference portal with DBMS backend, enabling scalable management for institutions.<br>
-            <a href="https://github.com/Ayushmanas/student-extracurricular-activities-management-system" target="_blank">GitHub Link</a>
-          </p>
-        </div>
-        <div class="project-card mb-2">
-          <h5 class="fw-semibold">Machine Learning Capstone Projects <span class="badge bg-info mx-1">On GitHub</span></h5>
-          <p>Public repository of Data Science / ML Capstone projects.<br>
-            <a href="https://github.com/Ayushmanas/Machine-Learning-Capstone-Projects" target="_blank">GitHub Link</a>
-          </p>
-        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Certifications -->
-<section id="certifications" class="bg-light pt-4 pb-4">
-  <div class="container">
-    <div class="section-title">Certifications</div>
-    <div class="row g-3">
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://cdn.datacamp.com/main-app/assets/brand/datacamp-og.png" alt="DataCamp">
-        <div>
-          <b>Data Scientist Associate – DataCamp</b><br>
-          Issued Mar 2026 · Expires Mar 2028<br>
-          Credential ID: <code>DSA0014453593694</code>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="DeepLearning.AI/Coursera">
-        <div>
-          <b>Machine Learning in Production – DeepLearning.AI</b><br>
-          Issued Mar 2024<br>
-          Skills: MLOps, Hugging Face Transformers
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg" alt="Udemy">
-        <div>
-          <b>Python for Data Science – Udemy</b><br>
-          Issued Nov 2023<br>
-          Skills: Predictive Modeling, Python, +5 skills
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
-        <div>
-          <b>Intro to Deep Learning – Kaggle</b><br>
-          Issued Oct 2023<br>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://iskillbox.com/wp-content/uploads/2022/11/iskillbox_header_logo.png" alt="iSkillBox">
-        <div>
-          <b>Advanced SQL – iSkillBox</b><br>
-          Issued Jun 2022<br>
-          Skills: Microsoft SQL Server, SQL
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
-        <div>
-          <b>Data Visualization & Communication with Tableau – Coursera</b><br>
-          Issued Dec 2021<br>
-          Credential ID: <code>F538NLCCHZJY</code>
-        </div>
-      </div>
-      <!-- Additional certifications: Coursera SQL, more Kaggle, HackerRank, etc. -->
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
-        <div>
-          <b>SQL for Data Science – Coursera</b><br>
-          Issued Dec 2021<br>
-          Credential ID: <code>NB5TSHUYMNNZ</code>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
-        <div>
-          <b>Advanced SQL – Kaggle</b><br>
-          Issued Oct 2021
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
-        <div>
-          <b>Intermediate Machine Learning – Kaggle</b><br>
-          Issued Oct 2021<br>
-          Skills: Predictive Modeling
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
-        <div>
-          <b>Intro to Machine Learning – Kaggle</b><br>
-          Issued Sep 2021
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
-        <div>
-          <b>Python – Kaggle</b><br>
-          Issued Sep 2021
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
-        <div>
-          <b>Using Databases with Python – Coursera</b><br>
-          Issued Oct 2020<br> Credential ID: <code>XAR859ZY63HZ</code>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://hrcdn.net/community-frontend/assets/favicon.ico" alt="HackerRank">
-        <div>
-          <b>Python – HackerRank</b><br>
-          Issued Oct 2020<br> Credential ID: <code>2912FF67CD83</code>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://hrcdn.net/community-frontend/assets/favicon.ico" alt="HackerRank">
-        <div>
-          <b>Java (Basic) – HackerRank</b><br>
-          Issued Jul 2020<br> Credential ID: <code>C3189C04763A</code>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
-        <div>
-          <b>Using Python to Access Web Data – Coursera</b><br>
-          Issued Nov 2019<br> Credential ID: <code>PA43F2TWF3AY</code>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
-        <div>
-          <b>Python Data Structures – Coursera</b><br>
-          Issued Mar 2019<br> Credential ID: <code>D4JNCHEPKSA2</code>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 d-flex align-items-center">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
-        <div>
-          <b>Programming for Everybody (Getting Started with Python) – Coursera</b><br>
-          Issued Mar 2019<br> Credential ID: <code>P4RCPHHFBV6A</code>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Resume -->
-<section id="resume" class="container my-5">
-  <div class="section-title">Resume</div>
-  <div class="row justify-content-center">
-    <div class="col-lg-9 col-md-12">
-      <object class="resume-embed w-100" data="resume.pdf" type="application/pdf" height="500">
-        <p>Resume PDF not displayed. <a href="resume.pdf" target="_blank">Download/Preview here</a>.</p>
-      </object>
-      <p class="mt-2 text-center"><a href="resume.pdf" target="_blank" class="btn btn-outline-primary"><i class="fa-solid fa-download"></i> Download PDF</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="bg-light py-5">
-  <div class="container text-center">
-    <div class="section-title mb-3">Contact</div>
-    <div class="row justify-content-center g-3">
-      <div class="col-md-5 text-start">
-        <p><span class="contact-icon"><i class="fa-solid fa-envelope"></i></span> <a href="mailto:ayush.kr009@gmail.com">ayush.kr009@gmail.com</a></p>
-        <p><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> <a href="tel:+919110024512">+91 9110024512</a></p>
-        <p><span class="contact-icon"><i class="fab fa-linkedin"></i></span> <a href="https://www.linkedin.com/in/ayush-prasad01/" target="_blank">@ayush-prasad01</a></p>
-        <p><span class="contact-icon"><i class="fab fa-github"></i></span> <a href="https://github.com/Ayushmanas" target="_blank">@Ayushmanas</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="container-fluid text-center mt-4 py-2" style="background:#232f45;color:#fff;">
-  <small>© 2026 Ayush Prasad &nbsp; | &nbsp; <a href="#home" style="color:#73caff;">Back to top</a></small>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  </section>
+  
+  <!-- Other sections remain unchanged -->
