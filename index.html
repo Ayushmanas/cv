@@ -41,6 +41,13 @@
       border-radius: 1rem;
       padding: 1.2rem;
     }
+    .project-card img {
+      max-height: 200px; /* Adjust height */
+      object-fit: cover; /* Ensures images are cropped */
+      width: 100%;
+      border-radius: 10px; /* Optional, adds rounded corners */
+      margin-bottom: 10px;
+    }
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -123,40 +130,48 @@
     <h2 class="section-title">Projects</h2>
     <div class="project-grid">
       <div class="project-card">
+        <img src="images/search_and_rescue.jpg" alt="Search & Rescue Project Image" class="img-fluid rounded my-2">
         <h5>Search & Rescue: Deliveries at Risk Prediction <span class="badge bg-primary ms-2">2024–2026</span></h5>
         <p>Developed end-to-end ETL and ML scoring pipelines to assess operational and conversational risk, using XGBoost and Gemini LLMs. Led to a 12% delivery risk reduction and significant cost savings for the client.</p>
       </div>
       <div class="project-card">
+        <img src="images/address_iq.jpg" alt="Address IQ Project Image" class="img-fluid rounded my-2">
         <h5>Address IQ – Deployable ML Grading Tool <span class="badge bg-primary ms-2">2024</span></h5>
         <p>Led team to build an active-learning ML solution for customer address data quality. Automated feature extraction and model training; used Gradient Boosting (PyCaret) and PostgreSQL; deployed via MLflow pipeline for scalability.</p>
       </div>
       <div class="project-card">
+        <img src="images/ai_segmentation.jpg" alt="AI-Driven Micro-Segmentation Project Image" class="img-fluid rounded my-2">
         <h5>AI-Driven Micro-Segmentation <span class="badge bg-primary ms-2">2023–2024</span></h5>
         <p>Created micro-audience segments for marketing by analyzing viewership, demographics, and metadata with Spark & Python. Achieved a 10% boost in ad revenue by enabling granular targeting strategies.</p>
       </div>
       <div class="project-card">
+        <img src="images/demo_imp.jpg" alt="Demographics Imputation NBCU Project Image" class="img-fluid rounded my-2">
         <h5>Demographics Imputation <span class="badge bg-primary ms-2">2022</span></h5>
         <p>Developed SparkML-based distributed models to predict demographic features from large-scale viewing data. Improved prediction accuracy, supporting refined marketing analytics for streaming clients.</p>
       </div>
       <div class="project-card">
+        <img src="images/project2.png" alt="Farmally Project Image" class="img-fluid rounded my-2">
         <h5>FarmAlly <span class="badge bg-info ms-2">On GitHub</span></h5>
         <p>A comprehensive web portal for data-driven farming. Features crop advisory, market insights, and responsive UX for smallholder farmers.<br>
           <a href="https://github.com/Ayushmanas/FarmAlly" target="_blank">GitHub Link</a>
         </p>
       </div>
       <div class="project-card">
+        <img src="images/project1.png" alt="Biscope Movies Page" class="img-fluid rounded my-2">
         <h5>Biscope <span class="badge bg-info ms-2">On GitHub</span></h5>
         <p>Movie and weather information portal using RESTful APIs (TMDB, OpenWeather), with interactive movie review and search tools.<br>
           <a href="https://github.com/Ayushmanas/Biscope" target="_blank">GitHub Link</a>
         </p>
       </div>
       <div class="project-card">
+        <img src="images/project4.png" alt="Student Database Management System" class="img-fluid rounded my-2">
         <h5>Student Database Management System <span class="badge bg-info ms-2">On GitHub</span></h5>
         <p>Student self-registration and course preference portal with DBMS backend, enabling scalable management for institutions.<br>
           <a href="https://github.com/Ayushmanas/student-extracurricular-activities-management-system" target="_blank">GitHub Link</a>
         </p>
       </div>
       <div class="project-card">
+        <img src="images/random_pic.png" alt="ML repository page" class="img-fluid rounded my-2">
         <h5>Machine Learning Capstone Projects <span class="badge bg-info ms-2">On GitHub</span></h5>
         <p>Public repository of Data Science / ML Capstone projects.<br>
           <a href="https://github.com/Ayushmanas/Machine-Learning-Capstone-Projects" target="_blank">GitHub Link</a>
@@ -171,7 +186,8 @@
     <h2 class="section-title">Certifications</h2>
     <div class="cert-grid">
       <div class="cert-box">
-        <img class="cert-logo" src="https://cdn.datacamp.com/main-app/assets/brand/datacamp-og.png" alt="DataCamp">
+        <!-- <img class="cert-logo" src="https://cdn.datacamp.com/main-app/assets/brand/datacamp-og.png" alt="DataCamp"> -->
+        <img class="cert-logo" src="https://play-lh.googleusercontent.com/Q6aj_-f8vwMCyH7INA64gb9MatNuOp9DKirXf-Vwbenf3I4gVzjJSVr2SsbwHSTxbA" alt="DataCamp">
         <div>
           <b>Data Scientist Associate – DataCamp</b><br>
           Issued Mar 2026 · Expires Mar 2028<br>
@@ -180,7 +196,7 @@
         </div>
       </div>
       <div class="cert-box">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="DeepLearning.AI/Coursera">
+        <img class="cert-logo" src="https://coursera-university-assets.s3.amazonaws.com/b4/5cb90bb92f420b99bf323a0356f451/Icon.png" alt="DeepLearning.AI/Coursera">
         <div>
           <b>Machine Learning in Production – DeepLearning.AI</b><br>
           Issued Mar 2024<br>
@@ -188,7 +204,7 @@
         </div>
       </div>
       <div class="cert-box">
-        <img class="cert-logo" src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg" alt="Udemy">
+        <img class="cert-logo" src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy">
         <div>
           <b>Python for Data Science – Udemy</b><br>
           Issued Nov 2023<br>
@@ -211,7 +227,7 @@
         </div>
       </div>
       <div class="cert-box">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <img class="cert-logo" src="https://images.ctfassets.net/00atxywtfxvd/2QeS5ysKMhZ3ZjiU2rGRJA/e15df94b265053ce8ded4f5e630241c8/cropped-android-chrome-512x512-1.png" alt="Coursera">
         <div>
           <b>Data Visualization & Communication with Tableau – Coursera</b><br>
           Issued Dec 2021<br>
@@ -219,7 +235,7 @@
         </div>
       </div>
       <div class="cert-box">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <img class="cert-logo" src="https://images.ctfassets.net/00atxywtfxvd/2QeS5ysKMhZ3ZjiU2rGRJA/e15df94b265053ce8ded4f5e630241c8/cropped-android-chrome-512x512-1.png" alt="Coursera">
         <div>
           <b>SQL for Data Science – Coursera</b><br>
           Issued Dec 2021<br>
@@ -256,7 +272,7 @@
         </div>
       </div>
       <div class="cert-box">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <img class="cert-logo" src="https://images.ctfassets.net/00atxywtfxvd/2QeS5ysKMhZ3ZjiU2rGRJA/e15df94b265053ce8ded4f5e630241c8/cropped-android-chrome-512x512-1.png" alt="Coursera">
         <div>
           <b>Using Databases with Python – Coursera</b><br>
           Issued Oct 2020<br>
@@ -280,7 +296,7 @@
         </div>
       </div>
       <div class="cert-box">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <img class="cert-logo" src="https://images.ctfassets.net/00atxywtfxvd/2QeS5ysKMhZ3ZjiU2rGRJA/e15df94b265053ce8ded4f5e630241c8/cropped-android-chrome-512x512-1.png" alt="Coursera">
         <div>
           <b>Using Python to Access Web Data – Coursera</b><br>
           Issued Nov 2019<br>
@@ -288,7 +304,7 @@
         </div>
       </div>
       <div class="cert-box">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <img class="cert-logo" src="https://images.ctfassets.net/00atxywtfxvd/2QeS5ysKMhZ3ZjiU2rGRJA/e15df94b265053ce8ded4f5e630241c8/cropped-android-chrome-512x512-1.png" alt="Coursera">
         <div>
           <b>Python Data Structures – Coursera</b><br>
           Issued Mar 2019<br>
@@ -296,7 +312,7 @@
         </div>
       </div>
       <div class="cert-box">
-        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <img class="cert-logo" src="https://images.ctfassets.net/00atxywtfxvd/2QeS5ysKMhZ3ZjiU2rGRJA/e15df94b265053ce8ded4f5e630241c8/cropped-android-chrome-512x512-1.png" alt="Coursera">
         <div>
           <b>Programming for Everybody (Getting Started with Python) – Coursera</b><br>
           Issued Mar 2019<br>
