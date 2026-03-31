@@ -22,9 +22,8 @@
       margin-left: 40px; background: #fff; border-radius: 0.5rem; padding: 1.5rem 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
     .timeline-date { font-weight: 700; color: #3498db; margin-bottom: 6px; }
-    .timeline-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 2px; }
-    .timeline-org { font-style: italic; font-size: 1rem; color: #1c3660; }
-    .cert-logo { height: 32px; max-width: 90px; object-fit: contain; margin-right: 0.7em; background: #fff; border-radius: 6px; }
+    .timeline-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 2px;}
+    .timeline-org { font-style: italic; font-size: 1rem; color: #1c3660;}
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -36,77 +35,303 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 1.2rem;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
-      border: 1px solid #e0e8fa; 
+      background: white;
+      box-shadow: 0 2px 8px rgba(44,62,80,.07); 
+      border: 1px solid #e0e8fa;
       border-radius: 1rem;
+      padding: 1.2rem;
     }
-    .resume-embed { border: 1.5px solid #d1e2f8; border-radius: 0.75rem; }
-    .section-title { border-left: 7px solid #3498db; padding-left: 11px; font-size: 2em; margin-bottom: 0.9em; }
-    a { color: #095ac1; }
-    .navbar { background: #232f45; }
-    .navbar-brand, .nav-link { color: #fff !important; }
-    .fa-solid, .fa-brands { color: #3498db; }
-    .contact-icon { color: tomato; }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .cert-box {
+      border: 1px solid #e0e8fa;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    .cert-logo {
+      max-height: 40px;
+      max-width: 60px;
+      margin-right: 10px;
+      border-radius: 6px;
+      background: #fff;
+    }
     @media (max-width: 767px) {
-      .project-grid { grid-template-columns: 1fr; }
+      #projects .project-grid { grid-template-columns: 1fr; }
       .project-card { min-height: 180px; }
-      .section-title { font-size: 1.4em; }
+      .cert-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md mb-4">
-    <div class="container-xxl">
-      <a class="navbar-brand fw-bold" href="#home">
-        <img src="images/profile-pic.jpeg" alt="Ayush profile" style="width:35px;border-radius:50%;border:2px solid #cfe2ff;margin-right:8px;">
-        Ayush Prasad
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" style="color:#fff;"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#timeline">Timeline</a>
-          <a class="nav-link" href="#projects">Projects</a>
-          <a class="nav-link" href="#certifications">Certifications</a>
-          <a class="nav-link" href="#resume">Resume</a>
-          <a class="nav-link" href="#contact">Contact</a>
-        </div>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Projects Section -->
-  <section id="projects" class="mt-5 mb-5">
-    <div class="container">
-      <div class="section-title">Projects</div>
-      <div class="project-grid mt-2">
-        <div class="project-card">
-          <h5>Search & Rescue: Deliveries at Risk Prediction</h5>
-          <p>Developed end-to-end ETL and ML scoring pipelines to assess operational and conversational risk, using XGBoost and Gemini LLMs. Led to a 12% delivery risk reduction and significant cost savings for the client.</p>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <img src="images/profile-pic.jpeg" class="rounded-circle" style="width: 40px;"> Ayush Prasad
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- About Section -->
+<section id="about" class="container my-5">
+  <h2 class="section-title">About Me</h2>
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img src="images/profile_pic3.jpg" alt="Avatar" class="rounded-circle w-75">
+    </div>
+    <div class="col-md-8">
+      <p>Data Scientist with 5+ years of experience in predictive modeling, marketing analytics, and applied machine learning. Passionate about building dynamic solutions for business challenges across industries.</p>
+      <p>Currently working as Senior ML Consultant at Capgemini.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline Section -->
+<section id="timeline" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Career Timeline</h2>
+    <div class="timeline">
+      <!-- Timeline content goes here -->
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h5>Search & Rescue: Deliveries at Risk Prediction <span class="badge bg-primary ms-2">2024–2026</span></h5>
+        <p>Developed end-to-end ETL and ML scoring pipelines to assess operational and conversational risk, using XGBoost and Gemini LLMs. Led to a 12% delivery risk reduction and significant cost savings for the client.</p>
+      </div>
+      <div class="project-card">
+        <h5>Address IQ – Deployable ML Grading Tool <span class="badge bg-primary ms-2">2024</span></h5>
+        <p>Led team to build an active-learning ML solution for customer address data quality. Automated feature extraction and model training; used Gradient Boosting (PyCaret) and PostgreSQL; deployed via MLflow pipeline for scalability.</p>
+      </div>
+      <div class="project-card">
+        <h5>AI-Driven Micro-Segmentation <span class="badge bg-primary ms-2">2023–2024</span></h5>
+        <p>Created micro-audience segments for marketing by analyzing viewership, demographics, and metadata with Spark & Python. Achieved a 10% boost in ad revenue by enabling granular targeting strategies.</p>
+      </div>
+      <div class="project-card">
+        <h5>Demographics Imputation <span class="badge bg-primary ms-2">2022</span></h5>
+        <p>Developed SparkML-based distributed models to predict demographic features from large-scale viewing data. Improved prediction accuracy, supporting refined marketing analytics for streaming clients.</p>
+      </div>
+      <div class="project-card">
+        <h5>FarmAlly <span class="badge bg-info ms-2">On GitHub</span></h5>
+        <p>A comprehensive web portal for data-driven farming. Features crop advisory, market insights, and responsive UX for smallholder farmers.<br>
+          <a href="https://github.com/Ayushmanas/FarmAlly" target="_blank">GitHub Link</a>
+        </p>
+      </div>
+      <div class="project-card">
+        <h5>Biscope <span class="badge bg-info ms-2">On GitHub</span></h5>
+        <p>Movie and weather information portal using RESTful APIs (TMDB, OpenWeather), with interactive movie review and search tools.<br>
+          <a href="https://github.com/Ayushmanas/Biscope" target="_blank">GitHub Link</a>
+        </p>
+      </div>
+      <div class="project-card">
+        <h5>Student Database Management System <span class="badge bg-info ms-2">On GitHub</span></h5>
+        <p>Student self-registration and course preference portal with DBMS backend, enabling scalable management for institutions.<br>
+          <a href="https://github.com/Ayushmanas/student-extracurricular-activities-management-system" target="_blank">GitHub Link</a>
+        </p>
+      </div>
+      <div class="project-card">
+        <h5>Machine Learning Capstone Projects <span class="badge bg-info ms-2">On GitHub</span></h5>
+        <p>Public repository of Data Science / ML Capstone projects.<br>
+          <a href="https://github.com/Ayushmanas/Machine-Learning-Capstone-Projects" target="_blank">GitHub Link</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Certifications Section -->
+<section id="certifications" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-box">
+        <img class="cert-logo" src="https://cdn.datacamp.com/main-app/assets/brand/datacamp-og.png" alt="DataCamp">
+        <div>
+          <b>Data Scientist Associate – DataCamp</b><br>
+          Issued Mar 2026 · Expires Mar 2028<br>
+          Credential ID: <code>DSA0014453593694</code><br>
+          <b>Skills:</b> Data Science
         </div>
-        <div class="project-card">
-          <h5>FarmAlly</h5>
-          <p>A comprehensive web portal for data-driven farming. Features crop advisory, market insights, and responsive UX for smallholder farmers.<br>
-            <a href="https://github.com/Ayushmanas/FarmAlly" target="_blank">GitHub Link</a>
-          </p>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="DeepLearning.AI/Coursera">
+        <div>
+          <b>Machine Learning in Production – DeepLearning.AI</b><br>
+          Issued Mar 2024<br>
+          <b>Skills:</b> MLOps, Hugging Face Transformers
         </div>
-        <div class="project-card">
-          <h5>Address IQ – Deployable ML Grading Tool</h5>
-          <p>Led team to build an active-learning ML solution for customer address data quality. Automated feature extraction and model training; used Gradient Boosting (PyCaret) and PostgreSQL; deployed via MLflow pipeline for scalability.</p>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg" alt="Udemy">
+        <div>
+          <b>Python for Data Science – Udemy</b><br>
+          Issued Nov 2023<br>
+          <b>Skills:</b> Predictive Modeling, Python, +5 skills
         </div>
-        <div class="project-card">
-          <h5>Biscope</h5>
-          <p>Movie and weather information portal using RESTful APIs (TMDB, OpenWeather), with interactive movie review and search tools.<br>
-            <a href="https://github.com/Ayushmanas/Biscope" target="_blank">GitHub Link</a>
-          </p>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
+        <div>
+          <b>Intro to Deep Learning – Kaggle</b><br>
+          Issued Oct 2023<br>
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://iskillbox.com/wp-content/uploads/2022/11/iskillbox_header_logo.png" alt="iSkillBox">
+        <div>
+          <b>Advanced SQL – iSkillBox</b><br>
+          Issued Jun 2022<br>
+          <b>Skills:</b> Microsoft SQL Server, SQL
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <div>
+          <b>Data Visualization & Communication with Tableau – Coursera</b><br>
+          Issued Dec 2021<br>
+          Credential ID: <code>F538NLCCHZJY</code>
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <div>
+          <b>SQL for Data Science – Coursera</b><br>
+          Issued Dec 2021<br>
+          Credential ID: <code>NB5TSHUYMNNZ</code>
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
+        <div>
+          <b>Advanced SQL – Kaggle</b><br>
+          Issued Oct 2021<br>
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
+        <div>
+          <b>Intermediate Machine Learning – Kaggle</b><br>
+          Issued Oct 2021<br>
+          <b>Skills:</b> Predictive Modeling
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
+        <div>
+          <b>Intro to Machine Learning – Kaggle</b><br>
+          Issued Sep 2021
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
+        <div>
+          <b>Python – Kaggle</b><br>
+          Issued Sep 2021
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <div>
+          <b>Using Databases with Python – Coursera</b><br>
+          Issued Oct 2020<br>
+          Credential ID: <code>XAR859ZY63HZ</code>
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://hrcdn.net/community-frontend/assets/favicon.ico" alt="HackerRank">
+        <div>
+          <b>Python – HackerRank</b><br>
+          Issued Oct 2020<br>
+          Credential ID: <code>2912FF67CD83</code>
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://hrcdn.net/community-frontend/assets/favicon.ico" alt="HackerRank">
+        <div>
+          <b>Java (Basic) – HackerRank</b><br>
+          Issued Jul 2020<br>
+          Credential ID: <code>C3189C04763A</code>
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <div>
+          <b>Using Python to Access Web Data – Coursera</b><br>
+          Issued Nov 2019<br>
+          Credential ID: <code>PA43F2TWF3AY</code>
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <div>
+          <b>Python Data Structures – Coursera</b><br>
+          Issued Mar 2019<br>
+          Credential ID: <code>D4JNCHEPKSA2</code>
+        </div>
+      </div>
+      <div class="cert-box">
+        <img class="cert-logo" src="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/coursera.ico" alt="Coursera">
+        <div>
+          <b>Programming for Everybody (Getting Started with Python) – Coursera</b><br>
+          Issued Mar 2019<br>
+          Credential ID: <code>P4RCPHHFBV6A</code>
         </div>
       </div>
     </div>
-  </section>
-  
-  <!-- Other sections remain unchanged -->
+  </div>
+</section>
+<!-- Resume Section -->
+<section id="resume" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="section-title">Resume</h2>
+    <object class="resume-embed w-100" data="resume.pdf" type="application/pdf" height="500">
+      <p>Unable to display PDF. <a href="resume.pdf">Download the Resume</a></p>
+    </object>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+  <div class="container text-center">
+    <h2 class="section-title">Contact</h2>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:ayush.kr009@gmail.com">ayush.kr009@gmail.com</a></p>
+    <p><i class="fas fa-phone"></i> +91 9110024512</p>
+    <p><i class="fab fa-linkedin-in"></i> <a href="https://www.linkedin.com/in/ayush-prasad01/" target="_blank">LinkedIn</a></p>
+    <p><i class="fab fa-github"></i> <a href="https://github.com/Ayushmanas" target="_blank">GitHub</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center text-white py-3" style="background-color: #232f45;">
+  <p>&copy; 2026 Ayush Prasad | <a href="#about" style="color: #73caff;">Back to Top</a></p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
